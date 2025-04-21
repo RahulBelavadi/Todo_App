@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Todo-App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="src/output.css">
+</head>
+
+<body style="background-image: url('public/taskadd.jfif'); background-size: cover; background-position: center;"
+  class="min-h-screen flex flex-col items-center p-6">
+
+  <div class="w-full max-w-4xl bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl p-5 flex flex-col gap-5">
+    
+    <!-- Add Task Section (Top) -->
+    <section class="w-full flex flex-col justify-center">
+      <h1 class="text-3xl font-extrabold text-indigo-900 mb-4 tracking-wide drop-shadow-md text-center">Add-Task</h1>
+      <form id="todoForm" class="space-y-4">
+        <div>
+          <label for="taskName" class="block text-indigo-900 font-semibold mb-1 text-base">Task Name</label>
+          <input type="text" id="taskName" name="taskName" required placeholder="Enter Task Name"
+            class="w-full rounded-xl border border-indigo-300 px-4 py-2 text-indigo-900 placeholder-indigo-400 focus:outline-none focus:ring-4 focus:ring-indigo-400 transition" />
+        </div>
+        <div>
+          <label for="taskDescription" class="block text-indigo-900 font-semibold mb-1 text-base">Detailed Description</label>
+          <textarea id="taskDescription" name="taskDescription" rows="3" required placeholder="Describe your task in detail..."
+            class="w-full rounded-xl border border-indigo-300 px-4 py-2 text-indigo-900 placeholder-indigo-400 resize-none focus:outline-none focus:ring-4 focus:ring-indigo-400 transition"></textarea>
+        </div>
+        <div>
+          <label for="taskDeadline" class="block text-indigo-900 font-semibold mb-1 text-base">Deadline</label>
+          <input type="date" id="taskDeadline" name="taskDeadline" required
+            class="w-40 rounded-xl border border-indigo-300 px-4 py-2 text-indigo-900 focus:outline-none focus:ring-4 focus:ring-indigo-400 transition" />
+        </div>
+       <div class="flex justify-center">
+        <button type="submit"
+        class="w-40 text-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 rounded-2xl shadow-lg flex justify-center items-center gap-3 transition-transform active:scale-95">
+        <i class="fas fa-plus-circle text-lg"></i> Add Task
+      </button>
+       </div>
+      </form>
+    </section>
+
+    <!-- Task List Section (Bottom) -->
+    <section class="w-full flex flex-col">
+      <h2 class="text-[25px] font-extrabold text-indigo-900 mb-6 tracking-wide drop-shadow-md flex items-center gap-3">
+        <i class="fas fa-tasks text-indigo-700"></i> Your Tasks
+      </h2>
+      <ul id="taskList"
+        class="space-y-5 overflow-y-auto pr-2 max-h-[500px] scrollbar-thin scrollbar-thumb-indigo-500 scrollbar-track-indigo-100"
+        aria-live="polite">
+        <!-- Tasks adder section -->
+      </ul>
+      <p id="emptyMessage" class="text-indigo-700 text-center mt-auto select-none">No tasks added yet. Start by adding a new task!</p>
+    </section>
+  </div>
+
+ <script src="script.js"></script>
+</body>
+</html>
